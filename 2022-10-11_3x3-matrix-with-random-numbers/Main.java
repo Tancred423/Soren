@@ -7,6 +7,11 @@ class Main {
     private static final int MATRIX_SIZE = 3;
 
     public static void main(String[] args) {
+        if (Math.sqrt(MAX) < MATRIX_SIZE) {
+            System.out.println("[!] With the current settings it is impossible to generate enough unique numbers.");
+            return;
+        }
+
         var randomNumbers = getUniqueRandomNumbers((int) Math.pow(MATRIX_SIZE, 2));
         var stringBuilder = new StringBuilder();
         var counter = 0;
