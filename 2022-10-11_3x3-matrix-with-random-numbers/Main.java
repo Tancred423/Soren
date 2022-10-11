@@ -13,17 +13,9 @@ class Main {
         }
 
         var randomNumbers = getUniqueRandomNumbers((int) Math.pow(MATRIX_SIZE, 2));
-        var stringBuilder = new StringBuilder();
-        var counter = 0;
+        var matrix = buildMatrix(randomNumbers);
 
-        for (Integer randomNumber : randomNumbers) {
-            if (counter % MATRIX_SIZE == 0) stringBuilder.append("\n");
-            if (randomNumber < 10) stringBuilder.append(" ");
-            stringBuilder.append(randomNumber).append(" ");
-            counter++;
-        }
-
-        System.out.println(stringBuilder.toString());
+        System.out.println(matrix);
     }
 
     private static ArrayList<Integer> getUniqueRandomNumbers(Integer amount) {
@@ -35,5 +27,19 @@ class Main {
         }
 
         return randomNumbers;
+    }
+
+    private static String buildMatrix(ArrayList<Integer> randomNumbers) {
+        var stringBuilder = new StringBuilder();
+        var counter = 0;
+
+        for (Integer randomNumber : randomNumbers) {
+            if (counter % MATRIX_SIZE == 0) stringBuilder.append("\n");
+            if (randomNumber < 10) stringBuilder.append(" ");
+            stringBuilder.append(randomNumber).append(" ");
+            counter++;
+        }
+
+        return stringBuilder.toString();
     }
 }
