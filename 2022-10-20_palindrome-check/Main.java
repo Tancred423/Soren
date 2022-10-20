@@ -8,8 +8,9 @@ class Main {
             System.out.println("Enter a word: ");
             String word = reader.next();
 
-            System.out.println(isPalindrome(word));
-            System.out.println(isPalindromeWithLoops(word));
+            System.out.println("Reverse: " + isPalindromeWithReverse(word));
+            System.out.println("CharAt: " + isPalindromeWithCharAt(word));
+            System.out.println("Char Array: " + isPalindromeWithCharArray(word));
         } catch (Exception exception) {
             System.out.println("Oh no. Something bad happened: " + exception.getMessage());
         } finally {
@@ -17,17 +18,31 @@ class Main {
         }
     }
 
-    private static boolean isPalindrome(String word) {
-        var reversedWord = new StringBuilder(word).reverse().toString();
+    private static boolean isPalindromeWithReverse(String word) {
+        String reversedWord = new StringBuilder(word).reverse().toString();
         return word.equals(reversedWord);
     }
 
-    private static boolean isPalindromeWithLoops(String word) {
+    private static boolean isPalindromeWithCharAt(String word) {
         int wordLength = word.length();
 
         for (int i = 0; i < wordLength / 2; i++) {
             char front = word.charAt(i);
             char back = word.charAt(wordLength - 1 - i);
+
+            if (front != back)
+                return false;
+        }
+
+        return true;
+    }
+
+    private static boolean isPalindromeWithCharArray(String word) {
+        char[] chars = word.toCharArray();
+
+        for (int i = 0; i < chars.length / 2; i++) {
+            char front = chars[i];
+            char back = chars[chars.length - 1 - i];
 
             if (front != back)
                 return false;
