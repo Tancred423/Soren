@@ -1,6 +1,7 @@
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -98,8 +99,8 @@ class Main {
     ////////////////////////////////////////
 
     private static String getInput() {
-        var scanner = new Scanner(System.in);
-        var pattern = "\\d{4}-\\d{2}-\\d{2}";
+        Scanner scanner = new Scanner(System.in);
+        String pattern = "\\d{4}-\\d{2}-\\d{2}";
 
         try {
             System.out.print("Please provide a date (YYYY-MM-DD): ");
@@ -113,8 +114,8 @@ class Main {
     }
 
     private static Calendar getCalendarFromInput(String input) throws ParseException {
-        var date = new SimpleDateFormat("yyyy-MM-dd").parse(input);
-        var calendar = Calendar.getInstance();
+        Date date = new SimpleDateFormat("yyyy-MM-dd").parse(input);
+        Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
 
         return calendar;
