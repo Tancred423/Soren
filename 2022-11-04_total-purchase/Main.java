@@ -19,6 +19,7 @@ class Main {
         int total = calculateTotal(subtotal, salesTax);
 
         System.out.println("Subtotal: " + subtotal + " | Sales tax: " + salesTax + " | Total: " + total);
+        scanner.close();
     }
 
     private static int getInputAsInteger() {
