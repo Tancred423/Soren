@@ -10,7 +10,7 @@ class Main {
         int totalSales = getInputAsInteger();
         int annualProfit = getAnnualProfit(totalSales);
 
-        System.out.println("The annual profit is: " + annualProfit);
+        System.out.println(String.format("The annual profit is: %s", annualProfit));
         scanner.close();
     }
 

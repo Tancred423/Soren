@@ -10,7 +10,7 @@ class Main {
         ArrayList<Integer> prices = new ArrayList<>();
 
         for (int i = 0; i < amountOfPurchases; i++) {
-            System.out.println("Please enter the price of your " + (i + 1) + ". item:");
+            System.out.println(String.format("Please enter the price of your %s. item:", i + 1));
             prices.add(getInputAsInteger());
         }
 
@@ -18,7 +18,7 @@ class Main {
         int salesTax = calculateSalesTax(subtotal);
         int total = calculateTotal(subtotal, salesTax);
 
-        System.out.println("Subtotal: " + subtotal + " | Sales tax: " + salesTax + " | Total: " + total);
+        System.out.println(String.format("Subtotal: %s | Sales tax: %s | Total: %s", subtotal, salesTax, total));
         scanner.close();
     }
 

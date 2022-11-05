@@ -14,7 +14,7 @@ class Main {
         for (Integer time : timesInHours) {
             int distance = calculateDistanceInMiles(speed, time);
 
-            System.out.println("The car traveled " + distance + " miles in " + time + " hours.");
+            System.out.println(String.format("The car traveled %s miles in %s hours.", distance, time));
         }
 
         scanner.close();

@@ -9,7 +9,7 @@ class Main {
         int number = getInputAsInteger();
         String romanNumeral = convertToRomanNumeral(number);
 
-        System.out.println(number + " as roman numeral is: " + romanNumeral);
+        System.out.println(String.format("%s as roman numeral is: %s", number, romanNumeral));
 
         scanner.close();
     }
