@@ -10,4 +10,4 @@ A customer in a store is purchasing five items. Design a program that asks for t
 
 ## Result
 
-![result](https://user-images.githubusercontent.com/38757664/200071856-e74b7489-2dbc-4762-96c9-d8bd2c44744f.png)
+![result](https://user-images.githubusercontent.com/38757664/200113252-0b89d05a-57df-4619-99c2-ae2bf932e7ad.png)
