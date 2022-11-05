@@ -1,5 +1,11 @@
-Result:
+# Palindrome Check
 
-![success](https://user-images.githubusercontent.com/38757664/197041119-3ae33a29-1532-4692-8f99-a6e952db7c14.png)
+## Task
 
-![failure](https://user-images.githubusercontent.com/38757664/197041127-468bad7c-3e85-4364-a711-b953e286276b.png)
+Make a program that lets the user input a string and outputs if that string is a palindrome or not.
+
+## Restrictions
+
+- You have to use a loop and no reverse functions.
+
+## Result

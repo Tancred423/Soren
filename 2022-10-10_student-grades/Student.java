@@ -5,8 +5,8 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Student {
-    String name;
-    LinkedHashMap<String, Integer> grades = new LinkedHashMap<>();
+    public String name;
+    public Map<String, Integer> grades = new LinkedHashMap<>();
 
     Student(String name) {
         this.name = name;
@@ -32,8 +32,10 @@ public class Student {
 
         try {
             var input = reader.nextInt();
-            if (input > 0 && input < 7) this.grades.put(subject, input);
-            else throw new InputMismatchException();
+            if (input > 0 && input < 7)
+                this.grades.put(subject, input);
+            else
+                throw new InputMismatchException();
         } catch (InputMismatchException exception) {
             System.out.println("[!] Please provide a number between 1 and 6.");
         }

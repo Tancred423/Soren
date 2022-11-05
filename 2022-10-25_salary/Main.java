@@ -1,26 +1,26 @@
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 class Main {
+    private static final Scanner SCANNER = new Scanner(System.in);
+
     public static void main(String[] args) {
-        double salary = getSalaryInput();
+        System.out.println("Please state your salary: ");
+        double salary = getInputAsDouble();
+
         int percentage = getPercentage(salary);
         double increasedSalary = increaseSalary(salary, percentage);
 
-        System.out.printf("The salary is now $%.2f\n", increasedSalary);
+        System.out.println(String.format("The salary is now $%.2f", increasedSalary));
+
+        SCANNER.close();
     }
 
-    private static double getSalaryInput() {
-        Scanner scanner = new Scanner(System.in);
-
+    private static double getInputAsDouble() {
         try {
-            System.out.println("Please state your salary: ");
-            return scanner.nextDouble();
-        } catch (InputMismatchException exception) {
+            return Double.parseDouble(SCANNER.nextLine());
+        } catch (Exception exception) {
             System.out.println("[!] Error: Invalid salary input. Please try again.");
-            return getSalaryInput();
-        } finally {
-            scanner.close();
+            return getInputAsDouble();
         }
     }
 

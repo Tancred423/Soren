@@ -1,4 +1,4 @@
-# Magic Date
+# Magic Dates
 
 ## Task
 

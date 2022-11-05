@@ -1,31 +1,31 @@
 import java.util.Scanner;
 
 class Main {
-    private final static Scanner scanner = new Scanner(System.in);
+    private static final Scanner SCANNER = new Scanner(System.in);
 
     public static void main(String[] args) {
         System.out.println("Please provide a number from 1 - 10:");
 
-        int number = getInputAsInteger();
+        int number = getInputAsIntegerInRange(1, 10);
         String romanNumeral = convertToRomanNumeral(number);
 
         System.out.println(String.format("%s as roman numeral is: %s", number, romanNumeral));
 
-        scanner.close();
+        SCANNER.close();
     }
 
-    private static int getInputAsInteger() {
+    private static int getInputAsIntegerInRange(int min, int max) {
         try {
-            int input = Integer.parseInt(scanner.nextLine());
+            int input = Integer.parseInt(SCANNER.nextLine());
 
-            if (input < 1 || input > 10) {
+            if (input < min || input > max) {
                 throw new Exception();
             }
 
             return input;
         } catch (Exception e) {
             System.out.println("[!] This is not a valid number. Try again:");
-            return getInputAsInteger();
+            return getInputAsIntegerInRange(min, max);
         }
     }
 

@@ -1,35 +1,47 @@
-import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 class Main {
+    private static final Scanner SCANNER = new Scanner(System.in);
+
     public static void main(String[] args) {
-        var endNumber = getInput();
-        var primeNumbers = new ArrayList<Integer>();
+        System.out.println("Enter a two-digit number: ");
+        int number = getInputAsIntegerInRange(10, 99);
 
-        for (int i = 2; i <= endNumber; i++)
-            if (isPrime(i))
-                primeNumbers.add(i);
+        String numberString = String.valueOf(number);
+        int firstDigit = Integer.parseInt("" + numberString.charAt(0));
+        int secondDigit = Integer.parseInt("" + numberString.charAt(1));
 
-        System.out.println("Prime numbers up to " + endNumber + " are: " + primeNumbers);
-    }
+        boolean firstDigitIsPrimeNumber = isPrime(firstDigit);
+        boolean secondDigitIsPrimeNumber = isPrime(secondDigit);
 
-    private static int getInput() {
-        Scanner reader = new Scanner(System.in);
-        System.out.println("Get prime numbers up to number: ");
-
-        var endNumber = 0;
-
-        try {
-            endNumber = reader.nextInt();
-        } catch (InputMismatchException exception) {
-            System.out.println("[!] Error: Please provide a valid number!");
-            endNumber = getInput();
-        } finally {
-            reader.close();
+        if (firstDigitIsPrimeNumber) {
+            System.out.println(String.format("%s is a prime number.", firstDigit));
+        } else {
+            System.out.println(String.format("%s is not a prime number.", firstDigit));
         }
 
-        return endNumber;
+        if (secondDigitIsPrimeNumber) {
+            System.out.println(String.format("%s is a prime number.", secondDigit));
+        } else {
+            System.out.println(String.format("%s is not a prime number.", secondDigit));
+        }
+
+        SCANNER.close();
+    }
+
+    private static int getInputAsIntegerInRange(int min, int max) {
+        try {
+            int input = Integer.parseInt(SCANNER.nextLine());
+
+            if (input < min || input > max) {
+                throw new Exception();
+            }
+
+            return input;
+        } catch (Exception e) {
+            System.out.println("[!] This is not a valid number. Try again:");
+            return getInputAsIntegerInRange(min, max);
+        }
     }
 
     private static boolean isPrime(int num) {

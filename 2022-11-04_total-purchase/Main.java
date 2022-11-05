@@ -2,44 +2,44 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 class Main {
-    private final static Scanner scanner = new Scanner(System.in);
-    private final static int amountOfPurchases = 5;
-    private final static int taxPercentage = 6;
+    private static final Scanner SCANNER = new Scanner(System.in);
+    private static final int AMOUNT_OF_PURCHASES = 5;
+    private static final int TAX_PERCENTAGE = 6;
 
     public static void main(String[] args) {
-        ArrayList<Integer> prices = new ArrayList<>();
+        ArrayList<Double> prices = new ArrayList<>();
 
-        for (int i = 0; i < amountOfPurchases; i++) {
+        for (int i = 0; i < AMOUNT_OF_PURCHASES; i++) {
             System.out.println(String.format("Please enter the price of your %s. item:", i + 1));
-            prices.add(getInputAsInteger());
+            prices.add(getInputAsDouble());
         }
 
-        int subtotal = calculateSubtotal(prices);
-        int salesTax = calculateSalesTax(subtotal);
-        int total = calculateTotal(subtotal, salesTax);
+        double subtotal = calculateSubtotal(prices);
+        double salesTax = calculateSalesTax(subtotal);
+        double total = calculateTotal(subtotal, salesTax);
 
-        System.out.println(String.format("Subtotal: %s | Sales tax: %s | Total: %s", subtotal, salesTax, total));
-        scanner.close();
+        System.out.println(String.format("Subtotal: %.2f | Sales tax: %.2f | Total: %.2f", subtotal, salesTax, total));
+        SCANNER.close();
     }
 
-    private static int getInputAsInteger() {
+    private static double getInputAsDouble() {
         try {
-            return Integer.parseInt(scanner.nextLine());
+            return Double.parseDouble(SCANNER.nextLine());
         } catch (Exception e) {
             System.out.println("[!] This is not a valid number. Try again:");
-            return getInputAsInteger();
+            return getInputAsDouble();
         }
     }
 
-    private static int calculateSubtotal(ArrayList<Integer> prices) {
-        return prices.stream().mapToInt(Integer::intValue).sum();
+    private static double calculateSubtotal(ArrayList<Double> prices) {
+        return prices.stream().mapToDouble(Double::doubleValue).sum();
     }
 
-    private static int calculateSalesTax(int subtotal) {
-        return subtotal * taxPercentage / 100;
+    private static double calculateSalesTax(double subtotal) {
+        return subtotal * TAX_PERCENTAGE / 100;
     }
 
-    private static int calculateTotal(int subtotal, int salesTax) {
+    private static double calculateTotal(double subtotal, double salesTax) {
         return subtotal + salesTax;
     }
 }

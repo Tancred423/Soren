@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 class Main {
-    private final static Scanner scanner = new Scanner(System.in);
-    private final static int profitPercentage = 23;
+    private static final Scanner SCANNER = new Scanner(System.in);
+    private static final int PROFIT_PERCENTAGE = 23;
 
     public static void main(String[] args) {
         System.out.println("Please provide the projected amount of total sales:");
@@ -11,12 +11,12 @@ class Main {
         int annualProfit = getAnnualProfit(totalSales);
 
         System.out.println(String.format("The annual profit is: %s", annualProfit));
-        scanner.close();
+        SCANNER.close();
     }
 
     private static int getInputAsInteger() {
         try {
-            return Integer.parseInt(scanner.nextLine());
+            return Integer.parseInt(SCANNER.nextLine());
         } catch (Exception e) {
             System.out.println("[!] This is not a valid number. Try again:");
             return getInputAsInteger();
@@ -24,6 +24,6 @@ class Main {
     }
 
     private static int getAnnualProfit(int totalSales) {
-        return Math.round(totalSales * profitPercentage / 100);
+        return Math.round(totalSales * PROFIT_PERCENTAGE / 100.0f);
     }
 }

@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 class Main {
-    private final static Scanner scanner = new Scanner(System.in);
+    private static final Scanner SCANNER = new Scanner(System.in);
 
     public static void main(String[] args) {
         System.out.println("Please provide a month in numeric form (1-12):");
@@ -21,12 +21,12 @@ class Main {
             System.out.println(String.format("%s/%s/%s is not a magic date", month, day, year));
         }
 
-        scanner.close();
+        SCANNER.close();
     }
 
     private static int getInputAsIntegerInRange(int min, int max) {
         try {
-            int input = Integer.parseInt(scanner.nextLine());
+            int input = Integer.parseInt(SCANNER.nextLine());
 
             if (input < min || input > max) {
                 throw new Exception();

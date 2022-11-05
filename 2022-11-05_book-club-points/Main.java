@@ -2,8 +2,8 @@ import java.util.Map;
 import java.util.Scanner;
 
 class Main {
-    private final static Scanner scanner = new Scanner(System.in);
-    private final static Map<Integer, Integer> conversions = Map.of(
+    private static final Scanner SCANNER = new Scanner(System.in);
+    private static final Map<Integer, Integer> CONVERSIONS = Map.of(
             0, 0,
             1, 5,
             2, 15,
@@ -18,12 +18,12 @@ class Main {
 
         System.out.println(String.format("You have been awarded %s points.", points));
 
-        scanner.close();
+        SCANNER.close();
     }
 
     private static int getInputAsInteger() {
         try {
-            return Integer.parseInt(scanner.nextLine());
+            return Integer.parseInt(SCANNER.nextLine());
         } catch (Exception e) {
             System.out.println("[!] This is not a valid number. Try again: ");
             return getInputAsInteger();
@@ -33,6 +33,6 @@ class Main {
     private static int getPointByAmountOfBooks(int amountBooks) {
         amountBooks = Math.max(0, amountBooks);
         amountBooks = Math.min(4, amountBooks);
-        return conversions.get(amountBooks);
+        return CONVERSIONS.get(amountBooks);
     }
 }

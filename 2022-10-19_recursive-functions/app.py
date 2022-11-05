@@ -1,32 +1,32 @@
-numList = []
+num_list = []
 fin = False
 
 # get inputs
 
 while (fin == False):
     print("Introduce los números que quieres tener en la lista. Cuando desees terminar, envía 'fin':")
-    numAdded = input()
+    num_added = input()
 
-    if (numAdded == 'fin'):
+    if (num_added == 'fin'):
         fin = True
     else:
-        numList.append(int(numAdded))
+        num_list.append(int(num_added))
 
-numAdded = len(numList)
+num_added = len(num_list)
 
 
-def encuentraMayor(i, counter, bigNumber):
-    num = numList[counter]
+def encuentra_mayor(i, counter, big_number):
+    num = num_list[counter]
 
-    if (num > bigNumber):
-        bigNumber = num
+    if (num > big_number):
+        big_number = num
 
     if (counter + 1 < i):
         counter += 1
-        return encuentraMayor(i, counter, bigNumber)
+        return encuentra_mayor(i, counter, big_number)
     else:
-        return bigNumber
+        return big_number
 
 
-bigNum = encuentraMayor(numAdded, 0, 0)
-print(bigNum)
+big_num = encuentra_mayor(num_added, 0, 0)
+print(big_num)

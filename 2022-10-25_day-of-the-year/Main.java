@@ -6,12 +6,37 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 class Main {
+    private static final Scanner SCANNER = new Scanner(System.in);
+
     public static void main(String[] args) throws ParseException {
-        String input = getInput();
-        Calendar calendar = getCalendarFromInput(input);
+        System.out.println("Please provide a date (YYYY-MM-DD):");
+        String dateString = getInputAsString();
+
+        Calendar calendar = getCalendarFromDateString(dateString);
         int dayOfYear = getDayOfYear(calendar);
 
-        System.out.println("The day of the year is: " + dayOfYear);
+        System.out.println(String.format("The day of the year is: %s", dayOfYear));
+
+        SCANNER.close();
+    }
+
+    private static String getInputAsString() {
+        String pattern = "\\d{4}-\\d{2}-\\d{2}";
+
+        try {
+            return SCANNER.next(pattern);
+        } catch (InputMismatchException exception) {
+            System.out.println("[!] Error: Wrong format. Please use YYYY-MM-DD.");
+            return getInputAsString();
+        }
+    }
+
+    private static Calendar getCalendarFromDateString(String input) throws ParseException {
+        Date date = new SimpleDateFormat("yyyy-MM-dd").parse(input);
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+
+        return calendar;
     }
 
     private static int getDayOfYear(Calendar calendar) {
@@ -67,57 +92,8 @@ class Main {
     private static boolean isLeapYear(int year) {
         // If the year is dividable by 1000, it is a leap year.
         // E.g. 1000 or 2000
-        if (year % 1000 == 0)
-            return true;
-
-        // If the last 2 digits of a year is dividable by 4, it is a leap year.
+        // OR if the last 2 digits of a year is dividable by 4, it is a leap year.
         // E.g. 1904, 1908... or 2004, 2008...
-        else if ((year % 100) % 4 == 0)
-            return true;
-
-        return false;
-    }
-
-    // Alternative getNumberOfDaysInMonth() without switch. Fancier, but I guess I
-    // have to use a switch statement... Therefore not used at the moment.
-    private static int getNumberOfDaysInMonth2(int month, boolean isLeapYear) {
-        if (month % 2 == 0) {
-            if (month == 2 && isLeapYear)
-                return 29;
-            else if (month == 2)
-                return 28;
-
-            return 30;
-        }
-
-        return 31;
-    }
-
-    ////////////////////////////////////////
-    // Uninteresting part.
-    // Just getting the input and converting it to a Calendar object.
-    ////////////////////////////////////////
-
-    private static String getInput() {
-        Scanner scanner = new Scanner(System.in);
-        String pattern = "\\d{4}-\\d{2}-\\d{2}";
-
-        try {
-            System.out.print("Please provide a date (YYYY-MM-DD): ");
-            return scanner.next(pattern);
-        } catch (InputMismatchException exception) {
-            System.out.println("[!] Error: Wrong format. Please use YYYY-MM-DD.");
-            return getInput();
-        } finally {
-            scanner.close();
-        }
-    }
-
-    private static Calendar getCalendarFromInput(String input) throws ParseException {
-        Date date = new SimpleDateFormat("yyyy-MM-dd").parse(input);
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
-
-        return calendar;
+        return year % 1000 == 0 || (year % 100) % 4 == 0;
     }
 }
