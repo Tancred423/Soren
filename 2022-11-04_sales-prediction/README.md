@@ -6,7 +6,7 @@ A company has determined that its annual profit is typically 23 percent of total
 
 ## Restrictions
 
-REMEMBER WE ARE USING FUNCTIONS
+- Use functions
 
 ## Result
 

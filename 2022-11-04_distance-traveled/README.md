@@ -14,6 +14,8 @@ A car is travelling X miles per hour. Design a program that displays the followi
 
 ## Restrictions
 
+- Use functions
+
 ## Result
 
 ![result](https://user-images.githubusercontent.com/38757664/200073982-6dae9e80-ff63-4945-bcc9-1b36a5336664.png)

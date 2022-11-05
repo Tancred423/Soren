@@ -26,7 +26,7 @@ class Main {
         try {
             return Integer.parseInt(scanner.nextLine());
         } catch (Exception e) {
-            System.out.println("[!] This is not a valid number. Try again: ");
+            System.out.println("[!] This is not a valid number. Try again:");
             return getInputAsInteger();
         }
     }

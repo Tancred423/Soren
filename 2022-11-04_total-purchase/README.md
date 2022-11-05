@@ -6,6 +6,8 @@ A customer in a store is purchasing five items. Design a program that asks for t
 
 ## Restrictions
 
+- Use functions
+
 ## Result
 
 ![result](https://user-images.githubusercontent.com/38757664/200071856-e74b7489-2dbc-4762-96c9-d8bd2c44744f.png)

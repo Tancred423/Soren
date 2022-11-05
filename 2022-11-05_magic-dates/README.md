@@ -10,6 +10,8 @@ Design a program that asks the user to enter a month (in numeric form), a day, a
 
 ## Restrictions
 
+- Use functions
+
 ## Result
 
 ![result_false](https://user-images.githubusercontent.com/38757664/200111501-a9b20162-cb2f-48fc-8be7-1c16d759763b.png)
