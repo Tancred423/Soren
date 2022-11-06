@@ -12,7 +12,7 @@ Design a program that lets the user play the game of Rock, Paper, Scissors again
    4.2 If one player chooses scissors and the other player chooses paper, then scissors wins. (Scissors cut paper.)
    4.3 If one player chooses paper and the other player chooses rock, then paper wins. (Paper wraps rock.)
    4.4 If both players make the same choice, the game must be played again to determine the winner
-5. Use the next function from Java to get the random numberbetween 1 and 3.
+5. Use the next function from Java to get the random number between 1 and 3.
 
 ## Restrictions
 
