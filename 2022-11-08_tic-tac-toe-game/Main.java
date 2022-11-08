@@ -57,11 +57,11 @@ class Main {
     }
 
     private static void printBoard() {
-        StringBuilder stringBuilder = new StringBuilder("\n");
+        StringBuilder stringBuilder = new StringBuilder();
 
         for (int row = 0; row < 3; row++) {
             for (int column = 0; column < 3; column++) {
-                if (row > 0 && column == 0) {
+                if (column == 0) {
                     stringBuilder.append("\n");
                 }
 
