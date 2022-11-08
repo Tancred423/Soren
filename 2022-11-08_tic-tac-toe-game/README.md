@@ -15,3 +15,7 @@ Design a program that allows two players to play a game of tic-tac-toe. Use a tw
 - Use functions
 
 ## Result
+
+https://user-images.githubusercontent.com/38757664/200634112-98752d38-d049-4d11-9020-fb0d29568fa7.mp4
+
+https://user-images.githubusercontent.com/38757664/200634116-e56716f7-4e29-41ca-b1ac-bca062664a0f.mp4
