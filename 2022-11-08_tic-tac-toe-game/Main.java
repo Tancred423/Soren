@@ -114,26 +114,28 @@ class Main {
     private static boolean hasWon() {
         // Horizontal
         for (String[] row : board) {
-            if (cellsAreEqualAndNotEmpty(Arrays.asList(row))) {
+            List<String> cellsInRow = Arrays.asList(row);
+
+            if (cellsAreEqualAndNotEmpty(cellsInRow)) {
                 return true;
             }
         }
 
         // Vertical
         for (int column = 0; column < 3; column++) {
-            List<String> cellsAtColumn = Arrays.asList(board[0][column], board[1][column], board[2][column]);
+            List<String> cellsInColumn = Arrays.asList(board[0][column], board[1][column], board[2][column]);
 
-            if (cellsAreEqualAndNotEmpty(cellsAtColumn)) {
+            if (cellsAreEqualAndNotEmpty(cellsInColumn)) {
                 return true;
             }
         }
 
         // Diagonal
-        List<String> cellsDiagonallyStartingTopLeft = Arrays.asList(board[0][0], board[1][1], board[2][2]);
-        List<String> cellsDiagonallyStartingBottomLeft = Arrays.asList(board[2][0], board[1][1], board[0][2]);
+        List<String> cellsInDiagonalTopLeftToBottomRight = Arrays.asList(board[0][0], board[1][1], board[2][2]);
+        List<String> cellsInDiagonalBottomLeftToTopRight = Arrays.asList(board[2][0], board[1][1], board[0][2]);
 
-        return cellsAreEqualAndNotEmpty(cellsDiagonallyStartingTopLeft)
-                || cellsAreEqualAndNotEmpty(cellsDiagonallyStartingBottomLeft);
+        return cellsAreEqualAndNotEmpty(cellsInDiagonalTopLeftToBottomRight)
+                || cellsAreEqualAndNotEmpty(cellsInDiagonalBottomLeftToTopRight);
     }
 
     private static boolean cellsAreEqualAndNotEmpty(List<String> cells) {
