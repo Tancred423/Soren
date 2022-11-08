@@ -114,7 +114,7 @@ class Main {
     private static boolean hasWon() {
         // Horizontal
         for (String[] row : board) {
-            if (Arrays.asList(row).stream().allMatch(cell -> cell.equals(getPlayerSymbol()))) {
+            if (cellsAreEqualAndNotEmpty(Arrays.asList(row))) {
                 return true;
             }
         }
