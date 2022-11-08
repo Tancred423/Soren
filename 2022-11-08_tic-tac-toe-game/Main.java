@@ -138,9 +138,9 @@ class Main {
 
     private static boolean cellsAreEqualAndNotEmpty(List<String> cells) {
         boolean anyCellIsEmpty = cells.stream().anyMatch(cell -> cell.equals("*"));
-        boolean allStringsAreTheSameInColumn = new HashSet<>(cells).size() == 1;
+        boolean allStringsAreEqual = new HashSet<>(cells).size() == 1;
 
-        return !anyCellIsEmpty && allStringsAreTheSameInColumn;
+        return !anyCellIsEmpty && allStringsAreEqual;
     }
 
     private static boolean isTie() {
