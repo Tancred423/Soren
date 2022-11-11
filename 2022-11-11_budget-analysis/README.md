@@ -9,3 +9,5 @@ Design a program that asks the user to enter the amount that they have budgeted 
 - Use functions
 
 ## Result
+
+![result](https://user-images.githubusercontent.com/38757664/201359590-36dc4845-42a9-4fee-9a4b-36a40815d5a7.png)
