@@ -13,3 +13,5 @@ To select a word, the program can generate a random number. For example, if the 
 - Use functions
 
 ## Result
+
+![result](https://user-images.githubusercontent.com/38757664/201366434-d12814cb-22e9-4685-ad05-bcca3dace4e3.png)
