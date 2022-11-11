@@ -15,3 +15,5 @@ Design a program to calculate the factorial of a number with recursion.
 - Use recursion
 
 ## Result
+
+![result](https://user-images.githubusercontent.com/38757664/201374127-6059ecd8-5239-4bc2-895c-3823b3d9aa5c.png)
